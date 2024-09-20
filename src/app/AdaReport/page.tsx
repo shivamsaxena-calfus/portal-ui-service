@@ -22,7 +22,6 @@ const Page = () => {
 
   const handleScanClick = () => {
     console.log("Scanning URL:", url);
-    // Add your scan logic here
   };
 
   const defaultColDef = {
