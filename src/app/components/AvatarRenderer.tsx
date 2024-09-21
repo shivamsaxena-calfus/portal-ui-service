@@ -11,12 +11,10 @@ interface User {
 const AvatarRenderer = ({ user }: { user: User }) => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
-  // Open the popover when avatar is clicked
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
-  // Close the popover
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -26,7 +24,6 @@ const AvatarRenderer = ({ user }: { user: User }) => {
 
   return (
     <div>
-      {/* Avatar with the first letter of the first name */}
       <Avatar
         sx={{ bgcolor: "primary.main", cursor: "pointer" }}
         onClick={handleClick}
@@ -34,7 +31,6 @@ const AvatarRenderer = ({ user }: { user: User }) => {
         {user.firstName.charAt(0)}
       </Avatar>
 
-      {/* Popover showing user details */}
       <Popover
         id={id}
         open={open}

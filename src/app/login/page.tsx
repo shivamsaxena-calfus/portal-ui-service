@@ -3,15 +3,12 @@ import React, { useState } from "react";
 import { Box, TextField, Button, Typography, Paper } from "@mui/material";
 
 const page = () => {
-  // State to hold form values
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Login form submitted", { email, password });
-    // Add your login logic here
   };
 
   return (
@@ -22,11 +19,10 @@ const page = () => {
         backgroundColor: "#f5f5f5",
       }}
     >
-      {/* Left Side Empty Space (60% width) */}
       <Box
         sx={{
-          flex: 6, // This gives 60% width (6 parts out of 10)
-          backgroundColor: "#badfe3", // You can customize the color or add an image here
+          flex: 6,
+          backgroundColor: "#badfe3",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -37,10 +33,9 @@ const page = () => {
         </Typography>
       </Box>
 
-      {/* Right Side (Login Form, 40% width) */}
       <Box
         sx={{
-          flex: 4, // This gives 40% width (4 parts out of 10)
+          flex: 4,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

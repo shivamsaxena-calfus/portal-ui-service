@@ -16,36 +16,30 @@ import {
 } from "@mui/material";
 import { ActionCellRenderer } from "./ActionCellRenderer";
 
-// Dummy data for rowData and columnDefs
 const rowData = DUMMY_DATA_FOR_HISTORY;
 const columnDefs: ColDef[] = [
   ...HISTORY_COL_DEF,
   {
     headerName: "Action",
     cellRenderer: ActionCellRenderer,
-    // flex: 1,
   },
 ];
 
 const Page = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
-  const [newUrl, setNewUrl] = useState(""); // State for the new URL
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newUrl, setNewUrl] = useState(""); 
 
-  // Open Modal
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
-  // Close Modal
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setNewUrl(""); // Clear the URL input on modal close
+    setNewUrl(""); 
   };
 
-  // Handle saving new URL
   const handleSaveUrl = () => {
     console.log("New URL added:", newUrl);
-    // Here you can implement the logic to add the new URL to the rowData or send it to the backend
     handleCloseModal();
   };
 
@@ -59,7 +53,6 @@ const Page = () => {
     <>
       <div className="flex justify-center items-start h-screen mt-10">
         <div className="w-4/5">
-          {/* Button to Add New URL */}
           <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 2 }}>
             <Button
               variant="contained"
@@ -70,7 +63,6 @@ const Page = () => {
             </Button>
           </Box>
 
-          {/* Ag-Grid */}
           <div
             className="ag-theme-alpine rounded-lg shadow-md"
             style={{ height: 300, width: "100%" }}
@@ -86,14 +78,13 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Modal for Adding New URL with increased size */}
       <Dialog
         open={isModalOpen}
         onClose={handleCloseModal}
-        maxWidth="sm" // Set the max width of the modal (you can also use other sizes like 'md' or 'lg')
-        fullWidth // Makes the modal take up full width based on the maxWidth
+        maxWidth="sm" 
+        fullWidth 
         PaperProps={{
-          sx: { width: "600px", height: "200px" }, // Custom width and height
+          sx: { width: "600px", height: "200px" }, 
         }}
       >
         <DialogTitle>Add New URL</DialogTitle>

@@ -30,11 +30,9 @@ const columnDefs: ColDef[] = [
   {
     headerName: "Action",
     cellRenderer: ActionCellRenderer,
-    // flex: 1,
   },
 ];
 
-// Sample JSON data with URLs
 const urls = [
   { Id: 1, Url: "www.calfus.com/home" },
   { Id: 2, Url: "www.example.com/about" },
@@ -42,23 +40,19 @@ const urls = [
 ];
 
 const Page = () => {
-  const [selectedUrl, setSelectedUrl] = useState(""); // State to track selected URL
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal open state
+  const [selectedUrl, setSelectedUrl] = useState(""); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
-  // Handle opening the modal
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
-  // Handle closing the modal
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
-  // Handle scan logic
   const handleScanClick = () => {
     console.log("Scanning URL:", selectedUrl);
-    // Add your scan logic here
     handleCloseModal();
   };
 
@@ -72,7 +66,6 @@ const Page = () => {
     <>
       <div className="flex justify-center items-start h-screen mt-10">
         <div className="w-4/5">
-          {/* Button to Open Modal */}
           <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 2 }}>
             <Button
               variant="contained"
@@ -83,7 +76,6 @@ const Page = () => {
             </Button>
           </Box>
 
-          {/* Ag-Grid */}
           <div
             className="ag-theme-alpine rounded-lg shadow-md"
             style={{ height: 300, width: "100%" }}
@@ -99,24 +91,21 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Modal Dialog */}
       <Dialog
         open={isModalOpen}
         onClose={handleCloseModal}
-        maxWidth="sm" // You can change the size (sm, md, lg)
+        maxWidth="sm"
         fullWidth
         PaperProps={{
-          sx: { width: "600px", height: "300px" }, // Adjust width and height here
+          sx: { width: "600px", height: "300px" },
         }}
       >
-        {/* Modal Header */}
         <DialogTitle>Initiate New Scan</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Please select the URL you want to scan.
           </DialogContentText>
 
-          {/* URL Dropdown */}
           <FormControl fullWidth variant="outlined" margin="dense">
             <InputLabel id="url-label">Select URL</InputLabel>
             <Select
