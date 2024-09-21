@@ -1,33 +1,35 @@
-export const HISTORY_COL_DEF= [
+import { ActionCellRenderer } from "./ActionCellRenderer";
+
+export const HISTORY_COL_DEF = [
   {
-    headerName: "First Name",
-    field: "FirstName",
+    headerName: "URL",
+    field: "URL",
     sortable: true,
     filter: true,
     flex: 1,
   },
   {
-    headerName: "Last Name",
+    headerName: "Scan Status",
+    field: "Status",
+    sortable: true,
+    filter: true,
+    flex: 1,
+  },
+  {
+    headerName: "Ada Score",
     field: "LastName",
     sortable: true,
     filter: true,
     flex: 1,
   },
   {
-    headerName: "Company Name",
+    headerName: "Last Scan",
     field: "CompanyName",
     sortable: true,
     filter: true,
     flex: 1,
   },
-  {
-    headerName: "Email Address",
-    field: "EmailAddress",
-    sortable: true,
-    filter: true,
-    flex: 1,
-  }
-]
+];
 
 export const DUMMY_DATA_FOR_HISTORY = [
   {
